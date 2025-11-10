@@ -106,6 +106,16 @@ jobs:
           echo "Última versión encontrada: $LATEST_VERSION"
           echo "version=$LATEST_VERSION" >> $GITHUB_OUTPUT
 
+      - name: Cleanup old release (if exists)
+        run: |
+          if helm status oc-database -n ffisa-dev >/dev/null 2>&1; then
+            echo " Release encontrada, eliminando..."
+            helm uninstall oc-database -n ffisa-dev
+          else
+            echo " No hay release previa, continuando..."
+          fi
+
+
       - name: Deploy Database
         run: |
           CHART_VERSION="${{ steps.get-chart-version.outputs.version }}"
