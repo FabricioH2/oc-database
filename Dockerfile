@@ -8,11 +8,11 @@ COPY ./init /docker-entrypoint-initdb.d/
 
 # Configurar permisos para OpenShift (usuario no-root)
 # MongoDB necesita permisos de escritura en /data/db
-RUN chown -R mongodb:mongodb /data/db && \
-    chmod -R 755 /data/db && \
-    chown -R mongodb:mongodb /var/log/mongodb && \
-    chmod -R 755 /var/log/mongodb
-
+#RUN chown -R mongodb:mongodb /data/db && \
+#    chmod -R 755 /data/db && \
+#    chown -R mongodb:mongodb /var/log/mongodb && \
+#    chmod -R 755 /var/log/mongodb
+#
 # (Opcional) Variables de entorno
 #ENV MONGO_INITDB_ROOT_USERNAME=admin
 #ENV MONGO_INITDB_ROOT_PASSWORD=admin123

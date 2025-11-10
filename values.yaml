@@ -3,7 +3,7 @@ namespace: ffisa-dev
 
 image:
   repository: fabricioph2/oc-database
-  tag: 5 # Cambia este número por el run_number del workflow que publicó la imagen
+  tag: 6 # Cambia este número por el run_number del workflow que publicó la imagen
 
 replicas: 1
 
