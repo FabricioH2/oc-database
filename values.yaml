@@ -1,0 +1,31 @@
+name: oc-database
+namespace: ffisa-dev
+
+image:
+  repository: fabricioph2/oc-database
+  tag: "{{ tag }}"
+
+replicas: 1
+
+resources:
+  requests:
+    cpu: "200m"
+    memory: "512Mi"
+  limits:
+    cpu: "500m"
+    memory: "1Gi"
+
+service:
+  enabled: true
+  port: 27017
+  targetPort: 27017
+
+route:
+  enabled: false
+
+hpa:
+  enabled: false
+
+statefulset:
+  enabled: true
+  storage: 1Gi
