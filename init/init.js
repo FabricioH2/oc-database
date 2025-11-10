@@ -6,12 +6,12 @@ db = db.getSiblingDB("comments_db");
 
 db.comments.insertMany([
   {
-    author: "Fabricio",
-    text: "Comentario Test FP"
+    name: "Fabricio",
+    comment: "Comentario Test FP"
   },
   {
-    author: "OpenShift",
-    text: "Implementación con OpenShift"
+    name: "OpenShift",
+    comment: "Implementación con OpenShift"
   },
  
 ]);
